@@ -1,0 +1,8 @@
+phidata
+ollama
+sqlalchemy
+requests
+biopython
+openpyxl
+pandas
+python-dotenv
