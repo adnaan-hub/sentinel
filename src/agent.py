@@ -28,7 +28,7 @@ def _call_llm(prompt: str) -> str:
         name="Local LLM Agent",
         model=MODEL,
         tools=[],  # No additional tools needed
-        instructions=["Never use information from previous conversations."],
+        instructions=["Never use information from previous conversations. Strictly provide concise and clear responses."],
         show_tool_calls=False,
         markdown=True,
         reasoning=True,
@@ -91,7 +91,8 @@ def generate_research_purpose(user_query: str) -> str:
         "- For example, 'To investigate the efficacy of X compared to Y in treating Z.'\n"
         "- If the query includes specific conditions (e.g., study designs, treatments, or patient populations), incorporate them appropriately.\n"
         "- Only rewrite the research purpose if absolutely necessary.\n"
-        "- Enclose the research purpose in triple backticks. Do not include extra text."
+        "- Output ONLY the research purpose in triple backticks '```'.\n"
+        "- Do not include extra text."
     )
     # logging.info("LLM prompt for research purpose: %s", prompt)
     return _call_llm(prompt)
@@ -112,7 +113,8 @@ def generate_mesh_strategy(user_query: str, research_purpose: str) -> str:
         "- Use 'AND' to combine different groups of terms.\n"
         "- Only specify population, intervention, and outcome terms.\n"
         "- Avoid specifying date ranges.\n"
-        "- Output ONLY the boolean search query in triple backticks. Do not include extra text."
+        "- Output ONLY the boolean search query in triple backticks '```'.\n"
+        "- Do not include extra text."
     )
     # logging.info("LLM prompt for MeSH strategy: %s", prompt)
     return _call_llm(prompt)
