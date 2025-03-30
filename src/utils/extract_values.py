@@ -49,9 +49,9 @@ def extract_query_from_markdown(text: str) -> str:
     else:
         content = text.strip()
     
-    # Find the first '(' in the extracted content
-    start_index = content.find('(')
+    # Try the first '`' in the extracted content
+    start_index = content.find('`')
     if start_index != -1:
         return content[start_index:].strip()
     else:
-        return content
+        return content.strip()
