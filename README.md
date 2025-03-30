@@ -99,6 +99,31 @@ Found 74 PubMed IDs
 2025-03-28 20:59:19,460 [INFO] Data stored successfully in the database.
 ```
 
+See the below example with more general outcome criteria (efficacy instead of specific outcomes e.g., pain relief):
+
+```bash
+python main.py --export
+Using PubMed API key for enhanced rate limits.
+Enter your search query: efficacy of placebo injections in knee osteoarthritis patients
+2025-03-29 22:20:14,741 [WARNING] No date range found in the query. Using default values: 2020 to 2025
+2025-03-29 22:20:25,772 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-03-29 22:20:26,133 [INFO] HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-29 22:20:30,568 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-03-29 22:20:30,899 [INFO] HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-29 22:20:30,900 [INFO] To evaluate the effectiveness of placebo injections compared to standard medical treatments for alleviating pain and enhancing mobility among patients with knee osteoarthritis.
+2025-03-29 22:21:12,265 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-03-29 22:21:12,601 [INFO] HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-29 22:21:18,577 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-03-29 22:21:18,903 [INFO] HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-29 22:21:18,904 [INFO] (ostearthritis OR osteoarthritis) AND knee AND (placebo treatment OR sham injection) AND (effectiveness OR efficacy OR outcome)
+2025-03-29 22:21:18,904 [INFO] Executing PubMed search...
+Final query for PubMed: (ostearthritis OR osteoarthritis) AND knee AND (placebo treatment OR sham injection) AND (effectiveness OR efficacy OR outcome) AND "2020/01/01"[dp] : "2025/12/31"[dp]
+Found 250 PubMed IDs
+2025-03-29 22:21:27,628 [INFO] Retrieved 250 search results
+2025-03-29 22:21:27,667 [INFO] Data stored successfully in the database.
+2025-03-29 22:21:27,769 [INFO] Data exported successfully to output.xlsx
+```
+
 With custom non-default date in query:
 
 ```bash
